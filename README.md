@@ -1,2 +1,3 @@
 # leetcode-solution
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+## Day 1-3 
+- Arrays
