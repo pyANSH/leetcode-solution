@@ -3,18 +3,15 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
-  let i = 0;
-
-  while (i <= nums.length - 2) {
-    let j = i + 1;
-    while (j <= nums.length - 1) {
-      if (nums[i] + nums[j] === target) {
-        return [i, j];
-      }
-      j++;
+var twoSum = function (nums, target) {
+    let startPoint = 0, endPoint = 1;
+    while (startPoint <= nums.length) {
+        if (nums[startPoint] + nums[endPoint] === target) return [startPoint, endPoint]
+        if (endPoint >= nums.length) {
+            startPoint = startPoint + 1
+            endPoint = startPoint + 1
+        } else {
+            endPoint++
+        }
     }
-    i++;
-  }
-
 };
