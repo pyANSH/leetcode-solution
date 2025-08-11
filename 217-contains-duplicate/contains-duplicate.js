@@ -3,6 +3,7 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
+    if (nums.length === 0) return false
     const visited = {}
     for(let i of nums){
         if(visited[i]) {
