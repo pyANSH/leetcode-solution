@@ -7,7 +7,7 @@ function productExceptSelf(nums) {
         p *= nums[i];
     }
     let s = 1;
-    for (let j = n - 1; j > -1; j--) {
+    for (let j = n - 1; j >= 0; j--) {
         arr[j] *= s;
         s *= nums[j];
     }
