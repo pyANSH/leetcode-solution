@@ -12,17 +12,17 @@ var isPalindrome = function (s) {
     let left = 0
     let right = s.length - 1
     while (left < right) {
-        let p1 = s[left].charCodeAt()
-        let p2 = s[right].charCodeAt()
-        if (!isAlphaNumeric(p1)) {
+        const l = s[left]
+        const r = s[right]
+        if (!isAlphaNumeric(l.charCodeAt())) {
             left++
             continue
         }
-        if (!isAlphaNumeric(p2)) {
+        if (!isAlphaNumeric(r.charCodeAt())) {
             right--
             continue
         }
-        if (s[left].toLowerCase() !== s[right].toLowerCase()) {
+        if (l.toLowerCase() !== r.toLowerCase()) {
             return false
         } else {
             left++
