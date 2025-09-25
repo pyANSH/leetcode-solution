@@ -2,15 +2,16 @@
  * @param {number[]} height
  * @return {number}
  */
+function getHighestHold(a, b, left, right) {
+    const height = Math.min(a, b)
+    const width = right - left
+    return height * width
+}
 var maxArea = function (height) {
     let left = 0
     let right = height.length - 1
     let highestHold = 0
-    const getHighestHold = (a, b) => {
-        const height = Math.min(a, b)
-        const width = right - left
-        return height * width
-    }
+
     while (left < right) {
         const p1 = height[left]
         const p2 = height[right]
