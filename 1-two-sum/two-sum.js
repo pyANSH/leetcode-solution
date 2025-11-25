@@ -4,11 +4,13 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-    const hash = new Map()
-    for (let i = 0; i <= nums.length; i++) {
-        const need = target - nums[i]
-        if (hash.has(need)) return [hash.get(need), i]
-        hash.set(nums[i], i)
+    let len = nums.length
+
+    for (let i = 0; i < len; i++) {
+        const t = target - nums[i]
+        for (let j = i + 1; j < len; j++) {
+            if (nums[j] - t === 0) return [i, j]
+        }
     }
-    return 
+
 };
