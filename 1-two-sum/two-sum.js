@@ -5,12 +5,10 @@
  */
 var twoSum = function (nums, target) {
     let len = nums.length
-    const map = new Map()
-
+    const diff = {}
     for (let i = 0; i < len; i++) {
-        const t = target - nums[i]
-        if (map.has(t)) return [i, map.get(t)]
-        map.set(nums[i], i)
+        let n = target - nums[i]
+        if (n in diff) return [i, diff[n]]
+        diff[nums[i]] = i
     }
-
 };
