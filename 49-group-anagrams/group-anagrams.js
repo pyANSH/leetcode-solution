@@ -2,16 +2,17 @@
  * @param {string[]} strs
  * @return {string[][]}
  */
+
 var groupAnagrams = function (strs) {
-    const map = new Map()
-
+    const obj = {}
     for (let i of strs) {
-
-        let sorted = i.split('').sort().join()
-        if (!map.has(sorted)) map.set(sorted, [])
-        map.get(sorted).push(i)
+        let q = i.split('').sort().join('')
+        if (q in obj) {
+            obj[q].push(i)
+        }
+        else {
+            obj[q] = [i]
+        }
     }
-
-    return Array.from(map.values())
-
+    return Object.values(obj)
 };
