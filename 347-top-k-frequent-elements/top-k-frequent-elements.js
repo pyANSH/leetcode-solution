@@ -4,19 +4,11 @@
  * @return {number[]}
  */
 var topKFrequent = function (nums, k) {
-  const map = new Map();
-  const rejected = new Map();
-  for (let i of nums) {
-    if (!rejected.has(i)) {
-      if (map.has(i)) {
-        map.set(i, map.get(i) + 1);
-      } else {
-        map.set(i, 1);
-      }
+    const map = new Map()
+    const len = nums.length
+    for (let i = 0; i < len; i++) {
+        map.set(nums[i], (map.get(nums[i]) || 0) + 1)
     }
-  }
-  highest = Array.from(map.keys()).sort((a, b) => map.get(b) - map.get(a));
-  return highest.slice(0, k);
+    const res = [...map.entries()].sort((a, b) =>  b[1] - a[1]).slice(0,k).map(z => z[0])
+    return res
 };
-
-console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
