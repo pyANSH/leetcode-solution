@@ -9,6 +9,6 @@ var topKFrequent = function (nums, k) {
     for (let i = 0; i < len; i++) {
         map.set(nums[i], (map.get(nums[i]) || 0) + 1)
     }
-    const res = [...map.entries()].sort((a, b) =>  b[1] - a[1]).slice(0,k).map(z => z[0])
-    return res
+    return [...map.keys()].sort((a, b) => map.get(b) - map.get(a)).slice(0,k);
+
 };
