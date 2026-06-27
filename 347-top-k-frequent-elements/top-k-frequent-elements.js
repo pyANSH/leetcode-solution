@@ -5,10 +5,10 @@
  */
 var topKFrequent = function (nums, k) {
     const map = new Map()
-    const len = nums.length
-    for (let i = 0; i < len; i++) {
-        map.set(nums[i], (map.get(nums[i]) || 0) + 1)
+    for (let i = 0; i < nums.length; i++) {
+        const current = nums[i]
+        map.set(current, (map.get(current) || 0) + 1)
     }
-    return [...map.keys()].sort((a, b) => map.get(b) - map.get(a)).slice(0,k);
 
+    return Array.from(map.keys()).sort((a, b) => map.get(b) - map.get(a)).slice(0, k)
 };
